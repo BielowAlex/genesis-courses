@@ -1,0 +1,58 @@
+@import "../../styles/constants/mixins";
+
+.header{
+  @include flex-cent;
+  width: auto;
+
+  &-container{
+    @include flex-alc-jsb;
+    width: 100%;
+    gap: 50px;
+    padding: 30px 40px;
+  }
+
+  &-logo{
+    @include flex-cent;
+    position: relative;
+    max-width: 513px;
+    &__text{
+      position: absolute;
+      top: 10%;
+      font-family: 'Montserrat', sans-serif;
+      color: var(--title-color);
+      font-weight: 600;
+      width: 100%;
+      text-align: center;
+      font-size: 53px;
+      line-height: 1.2;
+    }
+
+  }
+
+  &-nav{
+    @include flex-cent;
+    width: auto;
+    &__list{
+      @include flex-col-jsb;
+      align-items: flex-end;
+      gap: 36.52px;
+    }
+    &__link{
+      font-family: 'Montserrat',sans-serif;
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 1.27;
+      letter-spacing: 0.235em;
+      text-transform: uppercase;
+      color: var(--nav-link-color);
+      transition: all linear .3s;
+
+      &:hover{
+        color: var(--nav-link-hover-color);
+      }
+      &.active{
+        color: var(--nav-link-hover-color);
+      }
+    }
+  }
+}

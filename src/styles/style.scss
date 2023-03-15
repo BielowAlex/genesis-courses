@@ -1,0 +1,37 @@
+@import "imports";
+@import-normalize;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600&family=Oxanium:wght@500;600;700&family=Work+Sans:wght@400;500;600;700&display=swap');
+* {
+  font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+}
+
+
+body{
+  background:var(--background-color);
+}
+
+.content{
+  margin-top: 150px;
+  @include flex-col;
+  gap: 150px;
+}
+
+.wrap {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0 auto;
+  min-height: 100vh;
+  height:100%;
+}
+
+.container {
+  max-width: 1385px;
+  padding-left:80px;
+  padding-right:80px;
+  margin: 0 auto;
+}
+
+
+
