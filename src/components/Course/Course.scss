@@ -1,0 +1,65 @@
+@import "../../styles/constants/mixins";
+
+.course{
+  @include flex-cent;
+  width: auto;
+  padding-bottom: 20px;
+  &-container{
+    @include flex-col;
+    gap: 10px;
+    width: 100%;
+    color: var(--title-color);
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(7.95954px);
+    border-radius: 18px;
+    padding: 20px;
+  }
+
+  &-title{
+    @include flex-alc;
+
+    &__exit{
+      width: 40px;
+      height: 40px;
+      svg{
+        fill:var(--title-color)
+      }
+    }
+    &__text{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      @include adaptive-font(32, 18);
+      line-height: 1.2;
+      width: 100%;
+      color: var(--title-color);
+      padding: 5px 20px;
+    }
+  }
+
+  &-lessons{
+    @include flex-jsb;
+    align-items: flex-start;
+    gap: 10px;
+  }
+}
+
+@media screen and (max-width: 1155px){
+  .course{
+    &-title{
+      @include flex-col-cent;
+      flex-direction: column-reverse;
+
+      &__exit{
+        width: 30px;
+        height: 30px;
+        align-self: flex-end;
+      }
+      &__text{
+        text-align: center;
+      }
+    }
+    &-lessons{
+      @include flex-col-cent
+    }
+  }
+}

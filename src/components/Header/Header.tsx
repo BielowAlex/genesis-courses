@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 import './Header.scss';
 
@@ -8,7 +8,7 @@ const Header: React.FC = () => (
   <header className="header">
     <div className="container header-container">
       <Link to="/" className="header-logo">
-        <h2 className="header-logo__text">Genesis Courses</h2>
+        <h2 className="header-logo__text">Genesis</h2>
         <svg
           className="header-logo__svg"
           width="513"
@@ -37,12 +37,6 @@ const Header: React.FC = () => (
           />
         </svg>
       </Link>
-      <nav className="header-nav">
-        <ul className="header-nav__list">
-          <li className="header-nav__item"><NavLink to="/" className="header-nav__link">Home</NavLink></li>
-          <li className="header-nav__item"><NavLink to="/courses" className="header-nav__link">Courses</NavLink></li>
-        </ul>
-      </nav>
     </div>
   </header>
 );

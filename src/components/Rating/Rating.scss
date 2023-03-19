@@ -1,0 +1,19 @@
+@import "../../styles/constants/mixins";
+@import "../../styles/constants/colors";
+
+.course-rate{
+  @include flex-alc;
+  gap: 10px;
+
+  &__count{
+    font-size: 20px;
+    color: var(--page-color);
+  }
+
+  &__star{
+    width: 20px;
+    path{
+      fill:var(--page-color);
+    }
+  }
+}

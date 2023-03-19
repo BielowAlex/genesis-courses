@@ -1,0 +1,93 @@
+
+@import "../../styles/constants/mixins";
+
+.course-lessons__item{
+  @include flex-alc;
+  gap: 10px;
+  width: 100%;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(7.95954px);
+  border-radius: 18px;
+  color:var(--title-color);
+  cursor: pointer;
+  box-sizing: border-box;
+  border: 1px solid rgba(255, 255, 255, 0);
+
+  &-order{
+    @include flex-cent;
+    width: 40px;
+    height: 40px;
+    @include adaptive-font(24,18);
+    font-weight: 600;
+    color: var(--title-color);
+    padding: 5px 10px;
+    border-radius: 50%;
+    border: 1px solid var(--title-color);
+  }
+
+  &-title{
+    text-align: left;
+    font-weight: 300;
+    @include adaptive-font(22,16);
+    line-height: 1.2;
+    display: -webkit-box;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1; /* количество строк */
+    -webkit-box-orient: vertical;
+  }
+  &-status{
+    @include flex-cent;
+    max-width: 20px;
+    width: 100%;
+    height: 20px;
+    margin-left: auto;
+    svg{
+      width: 100%;
+      path{
+        fill:var(--title-color)
+      }
+    }
+  }
+
+  &:hover{
+    border: 1px solid var(--title-color);
+  }
+
+  &.active{
+    background:#C97335 ;
+  }
+
+  &.locked{
+    cursor: default;
+    .course-lessons__item-order,
+    .course-lessons__item-title{
+      color:var(--paragraf-color);
+      border-color: var(--paragraf-color);
+    }
+    .course-lessons__item-status{
+      svg{
+        path{
+          fill:var(--paragraf-color);
+        }
+      }
+    }
+
+    &:hover{
+      border-color: rgba(255, 255, 255, 0);
+    }
+  }
+}
+
+@media screen and (max-width: 769px){
+  .course-lessons__item{
+    padding: 5px 10px;
+
+    &-order{
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

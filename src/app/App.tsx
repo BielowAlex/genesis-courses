@@ -5,7 +5,9 @@ import { Route, Routes } from 'react-router-dom';
 import '../styles/style.scss';
 import { Header } from '../components';
 import { MainLayout } from '../layouts/MainLayout';
-import { CourseListPage, HomePage } from '../pages';
+import {
+  CourseListPage, CoursePage, NotFoundPage,
+} from '../pages';
 
 function App() {
   return (
@@ -13,8 +15,9 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<MainLayout />}>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/courses" element={<CourseListPage />} />
+          <Route index element={<CourseListPage />} />
+          <Route path="courses/:id" element={<CoursePage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Route>
       </Routes>
     </div>

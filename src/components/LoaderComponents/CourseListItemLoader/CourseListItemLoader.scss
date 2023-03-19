@@ -1,0 +1,130 @@
+@import "src/styles/constants/mixins";
+@import "src/styles/constants/colors";
+
+.courses-item-skeleton{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  gap: 30px;
+  animation: load 1s linear infinite;
+  opacity: .9;
+
+  &__poster-img{
+    display: none;
+    max-width: 480px;
+    height: 260px;
+    overflow: hidden;
+    width: 100%;
+    background: var(--loader-back-color);
+  }
+
+  &__btn{
+    width: 177px;
+    height: 51px;
+    border-radius: 18px;
+    background: var(--loader-back-color);
+    align-self: center;
+  }
+
+  &__poster{
+    min-width: 480px;
+    max-width: 480px;
+    max-height: 270px;
+    width: 100%;
+    height: 270px;
+    background: var(--loader-back-color);
+  }
+
+  &__info{
+    @include flex-col-jsb;
+    height: 100%;
+    gap: 15px;
+    width: 100%;
+    padding: 15px;
+  }
+
+  &__title{
+    height: 30px;
+    max-width: 685px;
+    width: 100%;
+    background: var(--loader-back-color);
+    border-radius: 18px;
+  }
+
+  &__about{
+    height: 14px;
+    max-width: 150px;
+    width: 100%;
+    background: var(--loader-back-color);
+    border-radius: 18px;
+  }
+
+  &__desc{
+    height: 20px;
+    width: 100%;
+    background: var(--loader-back-color);
+    border-radius: 18px;
+  }
+
+  &__skills{
+    @include flex-alc;
+    gap: 10px;
+    flex-wrap: wrap;
+    width: 100%;
+
+    &-item{
+      height: 14px;
+      max-width: 140px;
+      width: 100%;
+      background: var(--loader-back-color);
+      border-radius: 18px;
+    }
+  }
+}
+
+@keyframes load {
+  50%{
+    opacity: .6;
+  }
+}
+
+@media screen and (max-width: 1010px){
+  .courses-item-skeleton{
+    @include flex-col-cent;
+
+    &__info{
+      align-items: center;
+      max-width: 600px;
+      text-align: center;
+    }
+
+    &__skills{
+      justify-content: center;
+    }
+  }
+}
+
+@media screen and (max-width: 769px){
+  .courses-item-skeleton{
+    &__poster{
+      display: none;
+    }
+
+    &__poster-img{
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 500px){
+  .courses-item-skeleton{
+    &__skills{
+      display: none;
+    }
+
+    &__poster-img{
+      height: 200px;
+    }
+  }
+}

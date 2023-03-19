@@ -1,6 +1,7 @@
 export type ICoursesResp = {
   courses: ICourses[]
 };
+
 export interface ICourses {
   id: string,
   title: string,

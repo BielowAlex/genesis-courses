@@ -1,0 +1,22 @@
+@import "../../styles/constants/mixins";
+@import "../../styles/constants/colors";
+
+.course-lessons__player-desc{
+  @include flex-col;
+  align-items: flex-start;
+  gap: 10px;
+
+  &__title{
+    font-size: 18px;
+    font-weight: 500;
+    color:var(--title-color);
+  }
+
+  &__text{
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.2;
+    letter-spacing: 0.15em;
+    color:var(--paragraf-color);
+  }
+}
